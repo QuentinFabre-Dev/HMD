@@ -91,7 +91,7 @@
 
     <script>
         // Fonction pour appeler l'API de ChatGPT avec l'input du formulaire
-        function callChatGPTAPI(name, domaine, Actdate, proprio) {
+        function callChatGPTAPI(name,domaine,Actdate,proprio) {
             const apiUrl = 'https://api.openai.com/v1/completions';
             const apiKey = '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';
             const prompt = `Tu es un juriste specialisé en droit des affaires. Ecrit un acte de création de société avec les informations suivante : 
@@ -109,7 +109,7 @@
                 },
                 body: JSON.stringify({
                     'prompt': prompt,
-                    'model': "text-davinci-003",
+                    'model' : "text-davinci-003",
                     'max_tokens': 1000
                 })
             })
