@@ -87,6 +87,11 @@
             suivante :
         </p>
         <form id="myForm">
+            
+            <div class="form-group">
+                <label for="name">Saisir la clés API:</label>
+                <input type="text" id="apikey" name="apikey" placeholder="JindqiuknzX==FS...">
+            </div>
             <div class="form-group">
                 <label for="name">Nom de l'entreprise:</label>
                 <input type="text" id="name" name="name" placeholder="Votre nom">
@@ -128,9 +133,10 @@
 
         // Fonction pour appeler l'API de ChatGPT avec l'input du formulaire
         function callChatGPTAPI(name, domaine, Actdate, proprio) {
+            const apiKeyValue = document.getElementById('apikey').value;
             showLoader();
             const apiUrl = 'https://api.openai.com/v1/completions';
-            const apiKey = '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';
+            const apiKey = apiKeyValue
             const prompt = `Tu es un juriste specialisé en droit des affaires. Ecrit un acte de création de société avec les informations suivante : 
             Nom de l'entreprise : ${name}
             Domaine d'activité : ${domaine}
